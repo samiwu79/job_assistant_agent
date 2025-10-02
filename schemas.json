@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+  "definitions": {
+    "UserProfile": {
+      "type": "object",
+      "properties": {
+        "name":        { "type": "string", "minLength": 1 },
+        "email":       { "type": "string", "format": "email" },
+        "skills":      { "type": "array", "items": { "type": "string" } },
+        "experiences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "company":    { "type": "string" },
+              "title":      { "type": "string" },
+              "highlights": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["company", "title"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["name", "email"],
+      "additionalProperties": false
+    },
+
+    "ResumeScoreResult": {
+      "type": "object",
+      "properties": {
+        "score":              { "type": "integer", "minimum": 0, "maximum": 100 },
+        "missing_keywords":   { "type": "array", "items": { "type": "string" } },
+        "strengths":          { "type": "array", "items": { "type": "string" } },
+        "tailor_suggestions": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["score", "missing_keywords", "strengths", "tailor_suggestions"],
+      "additionalProperties": false
+    },
+
+    "TailoredAnswer": {
+      "type": "object",
+      "properties": {
+        "question":          { "type": "string" },
+        "answer":            { "type": "string" },
+        "rationale_bullets": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["question", "answer", "rationale_bullets"],
+      "additionalProperties": false
+    }
+  }
+}
