@@ -24,7 +24,7 @@ For this submission the LLM (Large Language Model) calls are **simulated locally
   - The **data contract** (`schemas.json`) and **prompt templates** (`prompts.txt`) are already in place and tested.  
   - The backend and API are fully functional and can be switched to a real LLM simply by replacing the internal logic of `agent_service.py` (one function call).  
 
-  - **How to Replace Local Logic with Real LLM**
+- **How to Replace Local Logic with Real LLM**
   If API keys/network become available:
   In **agent_service.py**
 ```bash
@@ -41,13 +41,13 @@ The rest of the backend remains unchanged.
 
 ## ⚙️ Installation
 
-- ** clone the project**
+- Clone the project
 ```bash
 git clone <your-gitlab-url>
 cd job_assistant_agent
 ```
 
-- **  install dependencies **
+- Install dependencies
 ```bash
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
